@@ -2,7 +2,7 @@
 const URL = "https://app.nocodb.com/api/v2/tables/m5o6kcdp3nx247v/records"
 const token = "RntGobIeckz014JpwItJYVwBX-WOYVqIk9846OHl";
 
-export function getDishes() {
+export async function getDishes() {
 
     const options = {
         method: "GET",
@@ -12,8 +12,12 @@ export function getDishes() {
         }
     }
 
-    fetch(URL, options)
-        .then(respuesta => respuesta.json())
-        .then(x => x.list)
-        .catch(e => console.log(e));
+
+    try {
+        const response = await fetch(URL, options);
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error("Error fetching dishes:", error);
+    }
 }

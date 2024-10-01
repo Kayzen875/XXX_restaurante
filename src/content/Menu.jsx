@@ -8,9 +8,15 @@ function Menu() {
     const [dishes, setDishes] = useState([]);
 
     useEffect(() => {
-        dishesData = getDishes();
-        setDishes(dishesData);
-        
+        const fetchDishes = async () => {
+            try {
+                const dishesData = await getDishes();
+                setDishes(dishesData);
+            } catch (e) {
+                console.error("Error in useEffect:", e);
+            }
+        };
+        fetchDishes();
     }, []);
 
     return (
