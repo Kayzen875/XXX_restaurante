@@ -7,21 +7,18 @@ function Menu() {
 
     const [dishes, setDishes] = useState([]);
 
+    function getMenu() {
+        getDishes()
+        .then(data => setDishes(data))
+    }
+
     useEffect(() => {
-        const fetchDishes = async () => {
-            try {
-                const dishesData = await getDishes();
-                setDishes(dishesData);
-            } catch (e) {
-                console.error("Error in useEffect:", e);
-            }
-        };
-        fetchDishes();
+        getMenu();
     }, []);
 
     return (
         <>
-            {<div>{dishes.map(dish => <div className="dish" key={dish.Id}><Dish {...dishes} /></div>)}</div>}
+            
         </>
     )
 }

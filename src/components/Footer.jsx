@@ -1,8 +1,9 @@
+import { Link } from "react-router-dom";
 
 function Footer(){
     return(
         <footer>
-        <h3>More About us</h3>
+        <Link to="/">More About Us</Link>
         </footer>
     )
 }
