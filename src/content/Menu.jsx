@@ -1,5 +1,5 @@
-import Dish from "../components/Dish";
-import { getDishes, getMenuDishes } from "../controllers/dishController";
+import MenuDish from "../components/MenuDish";
+import { getMenuDishes } from "../controllers/dishController";
 import { useState, useEffect } from "react";
 
 
@@ -20,7 +20,7 @@ function Menu() {
         <>
             <h1 className="tituloMenu">Menu semanal 15€</h1>
 
-            {<div className="menu">{dishes.map(dish => <div className="dish" key={dish.Id}><Dish {...dish} /></div>)}</div>}
+            {<div className="menu">{dishes.map(dish => <div className="dish" key={dish.Id}><MenuDish {...dish} /></div>)}</div>}
         </>
     )
 }

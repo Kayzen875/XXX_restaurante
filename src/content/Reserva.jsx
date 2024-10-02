@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { postReserva } from "../controllers/reservaController";
 
 function Reserva() {
 
@@ -10,8 +11,27 @@ function Reserva() {
     const [comentarios, setComentarios] = useState("");
 
     function postData(e) {
-
         e.preventDefault();
+
+        const reserva = {
+            "Nombre": nombre,
+            "Email": correo,
+            "Telefono": telefono,           
+            "Fecha": fecha,
+            "Comentarios": comentarios,
+            "Hora": hora
+        }
+
+        postReserva(reserva);
+
+        alert("Se ha realizado su reserva el dia " + fecha + " a las " + hora + " le esperamos!")
+
+        setNombre("");
+        setTelefono("");
+        setCorreo("");
+        setFecha("00/00/0000");
+        setHora("00:00");
+        setComentarios("");
     }
 
 

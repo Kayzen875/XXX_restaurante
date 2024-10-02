@@ -7,6 +7,7 @@ import Carta from "./content/Carta.jsx"
 import Menu from "./content/Menu.jsx"
 import Reserva from "./content/Reserva.jsx"
 import App from './App.jsx'
+import { Admin } from './content/Administracion.jsx'
 import "./css/global.css"
 
 createRoot(document.getElementById('root')).render(
@@ -18,6 +19,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/Carta" element={<Carta />}></Route>
         <Route path="/Menu" element={<Menu />}></Route>
         <Route path="/Reserva" element={<Reserva />}></Route>
+        <Route path="/admin" element={<Admin />}></Route>
       </Routes>
       <Footer />
     </Router>
