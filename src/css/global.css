@@ -60,3 +60,66 @@ a{
     align-self: center;
     height: 350px;
 }
+
+.menu{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    text-align: center;
+}
+
+.dish{
+    background-color: dimgrey;
+    width: 300px;
+    border-radius: 15px;
+    margin-bottom: 35px;
+    margin-top: 15px;
+}
+
+.dish > img{
+    width: 250px;
+    height: 250px;
+}
+
+.tituloMenu{
+    text-align: center;
+}
+
+.reserva{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.reserva > h1{
+    margin-left: 100px;
+}
+  
+form {
+    background-color: white;
+    border-radius: 10px;
+    width: 400px;
+}
+  
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid lightskyblue;
+    border-radius: 5px;
+}
+  
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: larger;
+    margin-left: 10px;
+}
+  
+button:hover {
+    background-color: #0056b3;
+}

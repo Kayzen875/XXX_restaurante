@@ -3,11 +3,10 @@ function Dish(dishes){
 
     return(
         <>
-            <h2>{dishes.Nombre}</h2>
-            <p>{dishes.Precio}€</p>
+            <h2>{dishes.Nombre} {dishes.Precio}€</h2>
             <p>{dishes.Tipo}</p>
             <img src={dishes.Foto}></img>
-            <p>{dishes.Vegetariano}</p>
+            {dishes.Vegetariano ? <p>Opcion Vegetariana</p> : <p>Opcion NO Vegetariana</p>}
             <p>{dishes.Alergenos}</p>
         </>
     )

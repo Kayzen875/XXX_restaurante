@@ -1,5 +1,5 @@
 import Dish from "../components/Dish";
-import { getDishes } from "../controllers/dishController";
+import { getDishes, getMenuDishes } from "../controllers/dishController";
 import { useState, useEffect } from "react";
 
 
@@ -8,7 +8,7 @@ function Menu() {
     const [dishes, setDishes] = useState([]);
 
     function getMenu() {
-        getDishes()
+        getMenuDishes()
         .then(data => setDishes(data))
     }
 
@@ -18,7 +18,9 @@ function Menu() {
 
     return (
         <>
-            
+            <h1 className="tituloMenu">Menu semanal 15€</h1>
+
+            {<div className="menu">{dishes.map(dish => <div className="dish" key={dish.Id}><Dish {...dish} /></div>)}</div>}
         </>
     )
 }
